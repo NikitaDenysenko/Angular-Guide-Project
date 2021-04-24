@@ -1,39 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-interface IServerElements  {
-  type: string,
-  name: string,
-  content: string
-}
+import { Component, OnInit } from '@angular/core'
+import { IServerElements,IServerInfo,IBlueprintInfo } from '../interfaces'
 @Component({
   selector: 'app-cmp',
   templateUrl: './cmp.component.html',
   styleUrls: ['./cmp.component.scss']
 })
 export class CmpComponent implements OnInit {
+  constructor () {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
+    
   }
 
-  serverElements: Array<IServerElements> = [];
-  newServerName = '';
-  newServerContent = '';
-
-  onAddServer() {
+  serverElements: Array<IServerElements> = [{type: 'server', name: 'Testserver', content: 'just a test'}]
+  
+  onServerAdded (serverData: IServerInfo) {
     this.serverElements.push({
       type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
-    });
+      name: serverData.name,
+      content: serverData.content
+    })
   }
 
-  onAddBlueprint() {
+  onBlueprintAdded (blueprintData: IBlueprintInfo) {
     this.serverElements.push({
       type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
-    });
+      name: blueprintData.name,
+      content: blueprintData.content
+    })
   }
-
 }
