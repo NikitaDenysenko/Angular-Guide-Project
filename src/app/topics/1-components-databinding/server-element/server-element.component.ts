@@ -20,10 +20,19 @@ import { IServerElements } from '../interfaces'
   styleUrls: ['./server-element.component.scss']
 })
 export class ServerElementComponent
-  implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,AfterViewInit,AfterViewChecked {
+  implements
+    OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked {
   @Input('srvElement') element: IServerElements
-  @ContentChild('contentParagraph', {static: true}) paragraph: ElementRef
-  @ViewChild('heading', {static: true})  header: ElementRef
+  @ContentChild('contentParagraph', { static: true }) paragraph: ElementRef
+  @ViewChild('heading', { static: true }) header: ElementRef
+
+  //demonstration of lifecycle methods
 
   constructor () {
     console.log('constructor called')
@@ -40,25 +49,25 @@ export class ServerElementComponent
     //can't access "header" ,and "paragraph"
   }
 
-  ngAfterContentInit () {
+  ngAfterContentInit (): void {
     console.log('ngAfterContentInit called')
     console.log(
       'Text Content of paragraph: ' + this.paragraph.nativeElement.textContent
     )
   }
 
-  ngAfterContentChecked () {
+  ngAfterContentChecked (): void {
     console.log('ngAfterContentChecked called')
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit (): void {
     console.log('ngAfterViewInit called')
     console.log(
       'Text Content of header: ' + this.header.nativeElement.textContent
     )
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewChecked (): void {
     console.log('ngAfterViewChecked called')
   }
 }

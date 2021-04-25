@@ -14,7 +14,7 @@ export class CmpComponent implements OnInit {
 
   serverElements: Array<IServerElements> = [{type: 'server', name: 'TestServer', content: 'just a test'}]
   
-  onServerAdded (serverData: IServerInfo) {
+  onServerAdded (serverData: IServerInfo): void {
     this.serverElements.push({
       type: 'server',
       name: serverData.name,
@@ -22,7 +22,7 @@ export class CmpComponent implements OnInit {
     })
   }
 
-  onBlueprintAdded (blueprintData: IBlueprintInfo) {
+  onBlueprintAdded (blueprintData: IBlueprintInfo): void {
     this.serverElements.push({
       type: 'blueprint',
       name: blueprintData.name,

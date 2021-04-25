@@ -1,6 +1,6 @@
 <p-card>
   <p class="p-text-center p-text-bold">Add new Servers or blueprints!</p>
-  
+
   <div class="card">
     <div class="p-fluid">
       <div class="p-field">
@@ -15,8 +15,10 @@
   </div>
 
   <ng-template pTemplate="footer">
-    <button (click)="onAddServer(serverNameInput)" pButton type="button" label="Add Server"
-      class="p-button-success"></button>
-    <button (click)="onAddBlueprint(serverNameInput)" pButton type="button" label="Add Server Blueprint"></button>
+    <div class="p-d-flex p-jc-end">
+      <button (click)="onAddServer(serverNameInput)" pButton type="button" label="Add Server"
+        class="p-button-success"></button>
+      <button (click)="onAddBlueprint(serverNameInput)" pButton type="button" label="Add Server Blueprint"></button>
+    </div>
   </ng-template>
 </p-card>

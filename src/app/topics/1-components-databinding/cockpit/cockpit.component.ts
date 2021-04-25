@@ -15,7 +15,7 @@ export class CockpitComponent implements OnInit {
 
   ngOnInit (): void {}
 
-  onAddServer (nameInput: HTMLInputElement) {
+  onAddServer (nameInput: HTMLInputElement): void {
     const serverData: IServerInfo = {
       name: nameInput.value,
       content: this.serverContentInput.nativeElement.value
@@ -23,7 +23,7 @@ export class CockpitComponent implements OnInit {
     this.serverCreated.emit(serverData)
   }
 
-  onAddBlueprint (nameInput: HTMLInputElement) {
+  onAddBlueprint (nameInput: HTMLInputElement): void {
     const bluePrintData: IBlueprintInfo = {
       name: nameInput.value,
       content: this.serverContentInput.nativeElement.value

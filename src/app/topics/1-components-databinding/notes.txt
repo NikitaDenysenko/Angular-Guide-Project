@@ -1,5 +1,9 @@
-@Input,
-@Output,
+* @Input - Decorator that marks a class field as an input property and supplies 
+configuration metadata.
+
+* @Output - Decorator that marks a class field as an output property and supplies 
+configuration metadata. 
+
 EventEmitter,
 $event,
 #localReference,
@@ -8,3 +12,6 @@ ElementRef,
 <ng-content>,
 Lifecycle Hooks,
 @ContentChild
+
+* SimpleChanges - A hashtable of changes represented by SimpleChange 
+objects stored at the declared property name they belong to on a Directive or Component.

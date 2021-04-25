@@ -1,11 +1,13 @@
-<app-cockpit (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)">
+<app-cockpit 
+(serverCreated)="onServerAdded($event)" 
+(bpCreated)="onBlueprintAdded($event)">
 </app-cockpit>
 <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement">
   <p-card class="server-info">
-    <div>{{ serverElement.name }}</div>
+    <div>Name: {{ serverElement.name }}</div>
     <p #contentParagraph>
-      <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
-      <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+      <strong *ngIf="serverElement.type === 'server'" style="color: red">Content: {{ serverElement.content }}</strong>
+      <em *ngIf="serverElement.type === 'blueprint'">Content: {{ serverElement.content }}</em>
     </p>
   </p-card>
 </app-server-element>
