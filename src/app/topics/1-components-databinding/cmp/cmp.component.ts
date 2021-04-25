@@ -12,7 +12,7 @@ export class CmpComponent implements OnInit {
     
   }
 
-  serverElements: Array<IServerElements> = [{type: 'server', name: 'Testserver', content: 'just a test'}]
+  serverElements: Array<IServerElements> = [{type: 'server', name: 'TestServer', content: 'just a test'}]
   
   onServerAdded (serverData: IServerInfo) {
     this.serverElements.push({

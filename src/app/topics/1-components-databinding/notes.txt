@@ -1,0 +1,10 @@
+@Input,
+@Output,
+EventEmitter,
+$event,
+#localReference,
+@ViewChild,
+ElementRef,
+<ng-content>,
+Lifecycle Hooks,
+@ContentChild

@@ -1,26 +1,22 @@
-<div class="row">
-    <div class="col-xs-12">
-      <p>Add new Servers or blueprints!</p>
-      <label>Server Name</label>
-      <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
-      <!-- Demo of local references -->
-      <input 
-        type="text" 
-        class="form-control"
-        #serverNameInput 
-      >
-      <label>Server Content</label>
-      <input 
-        type="text"
-        class="form-control" 
-        #serverContentInput
-      >
-      <br>
-      <button
-        class="btn btn-primary"
-        (click)="onAddServer(serverNameInput)">Add Server</button>
-      <button
-        class="btn btn-primary"
-        (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button>
+<p-card>
+  <p class="p-text-center p-text-bold">Add new Servers or blueprints!</p>
+  
+  <div class="card">
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="server-name">Server Name</label>
+        <input id="server-name" type="text" #serverNameInput pInputText />
+      </div>
+      <div class="p-field">
+        <label for="server-content">Server Content</label>
+        <input id="server-content" type="text" #serverContentInput pInputText />
+      </div>
     </div>
   </div>
+
+  <ng-template pTemplate="footer">
+    <button (click)="onAddServer(serverNameInput)" pButton type="button" label="Add Server"
+      class="p-button-success"></button>
+    <button (click)="onAddBlueprint(serverNameInput)" pButton type="button" label="Add Server Blueprint"></button>
+  </ng-template>
+</p-card>

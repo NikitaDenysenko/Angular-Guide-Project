@@ -9,8 +9,6 @@ import { IBlueprintInfo, IServerInfo } from '../interfaces'
 export class CockpitComponent implements OnInit {
   @Output() serverCreated = new EventEmitter<IServerInfo>() //() in EventEmitter are calling constructor
   @Output('bpCreated') blueprintCreated = new EventEmitter<IBlueprintInfo>()
-  //newServerName = ''
-  //newServerContent = ''
   @ViewChild('serverContentInput',{static: true}) serverContentInput: ElementRef;
 
   constructor () {}
