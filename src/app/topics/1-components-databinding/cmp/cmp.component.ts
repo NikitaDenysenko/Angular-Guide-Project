@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { IServerElements,IServerInfo,IBlueprintInfo } from '../interfaces'
+import { IServerElements, IServerInfo, IBlueprintInfo } from '../interfaces'
+import { serverElements } from '../data'
 @Component({
   selector: 'app-cmp',
   templateUrl: './cmp.component.html',
@@ -8,12 +9,10 @@ import { IServerElements,IServerInfo,IBlueprintInfo } from '../interfaces'
 export class CmpComponent implements OnInit {
   constructor () {}
 
-  ngOnInit (): void {
-    
-  }
+  ngOnInit (): void {}
 
-  serverElements: Array<IServerElements> = [{type: 'server', name: 'TestServer', content: 'just a test'}]
-  
+  serverElements = serverElements
+
   onServerAdded (serverData: IServerInfo): void {
     this.serverElements.push({
       type: 'server',
@@ -28,5 +27,14 @@ export class CmpComponent implements OnInit {
       name: blueprintData.name,
       content: blueprintData.content
     })
+  }
+
+  getParagraphStyle (srvElement: IServerElements): string {
+    if(srvElement.type === 'blueprint') {
+      return 'blueprint'
+    }
+    if(srvElement.type === 'server') {
+      return 'server'
+    }
   }
 }
