@@ -1,14 +1,13 @@
 <app-cockpit 
-(serverCreated)="onServerAdded($event)" 
-(bpCreated)="onBlueprintAdded($event)">
+(serverOnAWSCreated)="onServerOnAWSAdded($event)" 
+(azureCreated)="onServerOnAzureAdded($event)">
 </app-cockpit>
 <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement">
-  <p-card class="server-info">
-    <div>Name: {{ serverElement.name }}</div>
+  <p-card class="server-info ">
+    <p>Name: {{ serverElement.name }}</p>
     <p #contentParagraph [ngClass]="getParagraphStyle(serverElement)">
-      <!-- <strong *ngIf="serverElement.type === 'server'" style="color: red">Content: {{ serverElement.content }}</strong>
-      <em *ngIf="serverElement.type === 'blueprint'">Content: {{ serverElement.content }}</em> -->
       Content: {{serverElement.content}}
     </p>
+    <p>Provider: {{serverElement.cloudProvider}}</p>
   </p-card>
 </app-server-element>

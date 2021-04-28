@@ -7,27 +7,27 @@ import { IBlueprintInfo, IServerInfo } from '../interfaces'
   styleUrls: ['./cockpit.component.scss']
 })
 export class CockpitComponent implements OnInit {
-  @Output() serverCreated = new EventEmitter<IServerInfo>() //() in EventEmitter are calling constructor
-  @Output('bpCreated') blueprintCreated = new EventEmitter<IBlueprintInfo>()
+  @Output() serverOnAWSCreated = new EventEmitter<IServerInfo>() //() in EventEmitter are calling constructor
+  @Output('azureCreated') serverOnAzureCreated = new EventEmitter<IBlueprintInfo>()
   @ViewChild('serverContentInput',{static: true}) serverContentInput: ElementRef;
 
   constructor () {}
 
   ngOnInit (): void {}
 
-  onAddServer (nameInput: HTMLInputElement): void {
+  onAddOnAWS (nameInput: HTMLInputElement): void {
     const serverData: IServerInfo = {
       name: nameInput.value,
       content: this.serverContentInput.nativeElement.value
     }
-    this.serverCreated.emit(serverData)
+    this.serverOnAWSCreated.emit(serverData)
   }
 
-  onAddBlueprint (nameInput: HTMLInputElement): void {
+  onAddOnAzure (nameInput: HTMLInputElement): void {
     const bluePrintData: IBlueprintInfo = {
       name: nameInput.value,
       content: this.serverContentInput.nativeElement.value
     }
-    this.blueprintCreated.emit(bluePrintData)
+    this.serverOnAzureCreated.emit(bluePrintData)
   }
 }

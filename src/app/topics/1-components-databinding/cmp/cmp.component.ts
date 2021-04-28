@@ -13,28 +13,28 @@ export class CmpComponent implements OnInit {
 
   serverElements = serverElements
 
-  onServerAdded (serverData: IServerInfo): void {
+  onServerOnAWSAdded (serverData: IServerInfo): void {
     this.serverElements.push({
-      type: 'server',
+      cloudProvider: 'AWS',
       name: serverData.name,
       content: serverData.content
     })
   }
 
-  onBlueprintAdded (blueprintData: IBlueprintInfo): void {
+  onServerOnAzureAdded (blueprintData: IBlueprintInfo): void {
     this.serverElements.push({
-      type: 'blueprint',
+      cloudProvider: 'Azure',
       name: blueprintData.name,
       content: blueprintData.content
     })
   }
 
   getParagraphStyle (srvElement: IServerElements): string {
-    if(srvElement.type === 'blueprint') {
-      return 'blueprint'
+    if(srvElement.cloudProvider === 'AWS') {
+      return 'aws'
     }
-    if(srvElement.type === 'server') {
-      return 'server'
+    if(srvElement.cloudProvider === 'Azure') {
+      return 'azure'
     }
   }
 }

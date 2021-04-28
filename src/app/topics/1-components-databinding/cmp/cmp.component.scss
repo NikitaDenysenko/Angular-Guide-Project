@@ -2,14 +2,18 @@
   margin-top: 30px;
 }
 
-.blueprint {
+.azure {
   color: blue
 }
 
-.server {
-  color: red
+.aws {
+  color: green
 }
 
-.server-info {
-  margin: 16rem
+.server-info{
+  margin: 16rem;
+}
+
+.border {
+  border: 10px solid yellow;
 }

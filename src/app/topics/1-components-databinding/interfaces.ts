@@ -1,7 +1,7 @@
 export interface IServerElements {
-    type: string
     name: string
     content: string
+    cloudProvider: string
 }
 export interface IServerInfo{
     name: string,
