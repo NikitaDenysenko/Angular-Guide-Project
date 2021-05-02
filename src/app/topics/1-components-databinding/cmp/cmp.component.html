@@ -1,6 +1,7 @@
 <app-cockpit 
 (serverOnAWSCreated)="onServerOnAWSAdded($event)" 
-(azureCreated)="onServerOnAzureAdded($event)">
+(azureCreated)="onServerOnAzureAdded($event)"
+(gcpCreated)="onServerOnGCPAdded($event)">
 </app-cockpit>
 <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement">
   <p-card class="server-info ">

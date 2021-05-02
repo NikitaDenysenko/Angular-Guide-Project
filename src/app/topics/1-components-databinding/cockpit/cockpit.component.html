@@ -17,8 +17,9 @@
   <ng-template pTemplate="footer">
     <div class="p-d-flex p-jc-end">
       <button (click)="onAddOnAWS(serverNameInput)" pButton type="button" label="Add On AWS"
-        class="p-button-success"></button>
+        class="p-button-warning"></button>
       <button (click)="onAddOnAzure(serverNameInput)" pButton type="button" label="Add On Azure"></button>
+      <button (click)="onAddOnGCP(serverNameInput)" pButton type="button" label="Add On GCP" class="p-button-danger"></button>
     </div>
   </ng-template>
 </p-card>

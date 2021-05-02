@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { IServerElements, IServerInfo, IBlueprintInfo } from '../interfaces'
+import { IServerElements, IServerInfo } from '../interfaces'
 import { serverElements } from '../data'
 @Component({
   selector: 'app-cmp',
@@ -21,11 +21,19 @@ export class CmpComponent implements OnInit {
     })
   }
 
-  onServerOnAzureAdded (blueprintData: IBlueprintInfo): void {
+  onServerOnAzureAdded (serverData: IServerInfo): void {
     this.serverElements.push({
       cloudProvider: 'Azure',
-      name: blueprintData.name,
-      content: blueprintData.content
+      name: serverData.name,
+      content: serverData.content
+    })
+  }
+
+  onServerOnGCPAdded(serverData: IServerInfo): void {
+    this.serverElements.push({
+      cloudProvider: 'GCP',
+      name: serverData.name,
+      content: serverData.content
     })
   }
 
@@ -35,6 +43,9 @@ export class CmpComponent implements OnInit {
     }
     if(srvElement.cloudProvider === 'Azure') {
       return 'azure'
+    }
+    if(srvElement.cloudProvider === 'GCP') {
+      return 'gcp'
     }
   }
 }

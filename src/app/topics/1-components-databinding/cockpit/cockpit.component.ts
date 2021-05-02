@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core'
-import { IBlueprintInfo, IServerInfo } from '../interfaces'
+import { IServerInfo } from '../interfaces'
 
 @Component({
   selector: 'app-cockpit',
@@ -8,7 +8,8 @@ import { IBlueprintInfo, IServerInfo } from '../interfaces'
 })
 export class CockpitComponent implements OnInit {
   @Output() serverOnAWSCreated = new EventEmitter<IServerInfo>() //() in EventEmitter are calling constructor
-  @Output('azureCreated') serverOnAzureCreated = new EventEmitter<IBlueprintInfo>()
+  @Output('azureCreated') serverOnAzureCreated = new EventEmitter<IServerInfo>()
+  @Output('gcpCreated') serverOnGCPCreated = new EventEmitter<IServerInfo>()
   @ViewChild('serverContentInput',{static: true}) serverContentInput: ElementRef;
 
   constructor () {}
@@ -24,10 +25,18 @@ export class CockpitComponent implements OnInit {
   }
 
   onAddOnAzure (nameInput: HTMLInputElement): void {
-    const bluePrintData: IBlueprintInfo = {
+    const serverData: IServerInfo = {
       name: nameInput.value,
       content: this.serverContentInput.nativeElement.value
     }
-    this.serverOnAzureCreated.emit(bluePrintData)
+    this.serverOnAzureCreated.emit(serverData)
+  }
+
+  onAddOnGCP (nameInput: HTMLInputElement): void {
+    const serverData: IServerInfo = {
+      name: nameInput.value,
+      content: this.serverContentInput.nativeElement.value
+    }
+    this.serverOnGCPCreated.emit(serverData)
   }
 }
