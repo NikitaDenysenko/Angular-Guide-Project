@@ -10,7 +10,7 @@ export class CockpitComponent implements OnInit {
   @Output() serverOnAWSCreated = new EventEmitter<IServerInfo>() //() in EventEmitter are calling constructor
   @Output('azureCreated') serverOnAzureCreated = new EventEmitter<IServerInfo>()
   @Output('gcpCreated') serverOnGCPCreated = new EventEmitter<IServerInfo>()
-  @ViewChild('serverContentInput',{static: true}) serverContentInput: ElementRef;
+  @ViewChild('serverContentInput',{static: true}) serverContentInput: ElementRef<HTMLInputElement>;
 
   constructor () {}
 

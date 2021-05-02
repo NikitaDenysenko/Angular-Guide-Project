@@ -10,13 +10,20 @@ or asynchronously, and register handlers for those events by subscribing to an i
 * $event - Parent directives listen for the event by binding to this property and accessing the data 
 through the $event object.
 
-#localReference,
-<ng-content>,
-@ViewChild,
-@ContentChild,
-ElementRef,
-Lifecycle Hooks,
+* #localReference/#templateReference - Template variables help you use data from one part of a template in another part of the template. 
+With template variables, you can perform tasks such as respond to user input or finely tune your application's forms.
 
+* <ng-content> - 'html inside of out components'
+
+* @ViewChild - Property decorator that configures a view query. The change detector looks for the first element or
+the directive matching the selector in the view DOM. If the view DOM changes, and a new child matches the selector, the property is updated.
+
+* @ContentChild - 'gets html from <ng-content>'
+
+* ElementRef - wrapper, that wraps specified DOM element, and allows us to work with DOM,
+provides nativeElement (div,span,p etc) object. 
+
+* Lifecycle Hooks - https://angular.io/guide/lifecycle-hooks
 
 * SimpleChanges - A hashtable of changes represented by SimpleChange 
 objects stored at the declared property name they belong to on a Directive or Component.
