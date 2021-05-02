@@ -10,14 +10,22 @@ import { ServerElementComponent } from './topics/1-components-databinding/server
 
 import { ButtonModule } from 'primeng/button'
 import { CardModule } from 'primeng/card'
-import { InputTextModule } from 'primeng/inputtext'
+import { InputTextModule } from 'primeng/inputtext';
+import { MainDirectivesComponent } from './topics/2-directives/main-directives/main-directives.component';
+import {BasicHighlightDirective} from './topics/2-directives/basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './topics/2-directives/better-highlight/better-highlight.directive';
+import { UnlessDirective } from './topics/2-directives/structural-directives/unless.directive'
 
 @NgModule({
   declarations: [
     AppComponent,
     CmpComponent,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    MainDirectivesComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,

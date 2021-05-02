@@ -27,3 +27,5 @@ provides nativeElement (div,span,p etc) object.
 
 * SimpleChanges - A hashtable of changes represented by SimpleChange 
 objects stored at the declared property name they belong to on a Directive or Component.
+
+//make different inputs
