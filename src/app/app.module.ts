@@ -12,9 +12,11 @@ import { ButtonModule } from 'primeng/button'
 import { CardModule } from 'primeng/card'
 import { InputTextModule } from 'primeng/inputtext';
 import { MainDirectivesComponent } from './topics/2-directives/main-directives/main-directives.component';
-import {BasicHighlightDirective} from './topics/2-directives/basic-highlight/basic-highlight.directive';
-import { BetterHighlightDirective } from './topics/2-directives/better-highlight/better-highlight.directive';
-import { UnlessDirective } from './topics/2-directives/structural-directives/unless.directive'
+import {BasicHighlightDirective} from './topics/2-directives/directives/attribute/basic-highlight.directive';
+import { BetterHighlightDirective } from './topics/2-directives/directives/attribute/better-highlight.directive';
+import { UnlessDirective } from './topics/2-directives/directives/structural/unless.directive';
+import { RendererDirective } from './topics/2-directives/directives/attribute/renderer.directive';
+import { HostlistenerDirective } from './topics/2-directives/directives/attribute/hostlistener.directive'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { UnlessDirective } from './topics/2-directives/structural-directives/unl
     MainDirectivesComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    RendererDirective,
+    HostlistenerDirective
   ],
   imports: [
     BrowserModule,
