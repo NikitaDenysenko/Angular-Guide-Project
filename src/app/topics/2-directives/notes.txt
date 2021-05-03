@@ -1,8 +1,17 @@
-Renderer2
+* Renderer2 - Extend this base class to implement custom rendering.
+By default, Angular renders a template into DOM. You can use custom 
+rendering to intercept rendering calls, or to render to something other than DOM.
 
 * @HostListener - Decorator that declares a DOM event to listen for, and
 provides a handler method to run when that event occurs.
 
-@HostBinding
-TemplateRef
-ViewContainerRef
+* @HostBinding - Decorator that marks a DOM property as a host-binding property 
+and supplies configuration metadata. Angular automatically checks host property 
+bindings during change detection, and if a binding changes it updates the host
+element of the directive.
+
+* TemplateRef - Represents an embedded template that can be used to instantiate 
+embedded views. To instantiate embedded views based on a template, use the ViewContainerRef 
+method createEmbeddedView().
+
+* ViewContainerRef - Represents a container where one or more views can be attached to a component.
