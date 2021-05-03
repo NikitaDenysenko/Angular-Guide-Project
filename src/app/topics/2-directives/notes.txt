@@ -1,6 +1,8 @@
-@Directive
 Renderer2
-@HostListener
+
+* @HostListener - Decorator that declares a DOM event to listen for, and
+provides a handler method to run when that event occurs.
+
 @HostBinding
 TemplateRef
 ViewContainerRef
