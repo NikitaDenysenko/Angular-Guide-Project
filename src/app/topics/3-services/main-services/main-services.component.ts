@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { AccountsService } from '../services/accounts.service';
+import { Component, OnInit } from '@angular/core'
+import { AccountsService } from '../services/accounts.service'
+
+import {IAccount} from '../interfaces'
 
 @Component({
   selector: 'app-main-services',
   templateUrl: './main-services.component.html',
-  styleUrls: ['./main-services.component.scss'],
-  //providers: [AccountsService]
+  styleUrls: ['./main-services.component.scss']
 })
 export class MainServicesComponent implements OnInit {
+  constructor (private accountsService: AccountsService) {}
 
-  constructor(private accountsService: AccountsService) { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
     this.accounts = this.accountsService.accounts
   }
 
-  accounts: {name: string, status: string}[] = [];
-
+  accounts: Array<IAccount> = []
 }

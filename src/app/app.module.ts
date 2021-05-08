@@ -22,6 +22,7 @@ import { NewAccountComponent } from './topics/3-services/new-account/new-account
 import { AccountComponent } from './topics/3-services/account/account.component'
 import { AccountsService } from './topics/3-services/services/accounts.service'
 import { LoggingService } from './topics/3-services/services/logging.service'
+import { IdService } from './topics/3-services/services/id.service'
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { LoggingService } from './topics/3-services/services/logging.service'
     InputTextModule,
     CardModule
   ],
-  providers: [AccountsService,LoggingService],
+  providers: [AccountsService,LoggingService,IdService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,27 +1,27 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { AccountsService } from '../services/accounts.service';
-import { LoggingService } from '../services/logging.service';
+import { Component, OnInit, Input } from '@angular/core'
+import { AccountsService } from '../services/accounts.service'
+import { LoggingService } from '../services/logging.service'
+
+import {IAccount} from '../interfaces'
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.scss'],
-  //providers: [LoggingService]
+  styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
+  constructor (
+    private loggingService: LoggingService,
+    private accountsService: AccountsService
+  ) {}
 
-  constructor(private loggingService: LoggingService,private accountsService: AccountsService) { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
-  @Input() account: {name: string, status: string};
-  @Input() id: number;
+  @Input() account: IAccount
 
-
-  onSetTo(status: string) {
-    this.accountsService.updateStatus(this.id, status)
+  onSetTo (status: string): void {
+    this.accountsService.updateStatus(this.account.id, status)
     // this.loggingService.logStatusChange(status);
   }
-
 }

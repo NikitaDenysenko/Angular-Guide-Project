@@ -1,29 +1,36 @@
-import { Injectable } from "@angular/core"
-import { LoggingService } from "./logging.service"
+import { Injectable } from '@angular/core'
+import { LoggingService } from './logging.service'
+import { IdService } from './id.service'
+
+import { IAccount } from '../interfaces'
 
 @Injectable()
 export class AccountsService {
-  accounts = [
+  accounts: Array<IAccount> = [
     {
+      id: this.idService.getNewId(),
       name: 'Master Account',
       status: 'active'
     },
     {
+      id: this.idService.getNewId(),
       name: 'TestAccount',
       status: 'inactive'
     },
     {
+      id: this.idService.getNewId(),
       name: 'Hidden Account',
       status: 'unknown'
     }
   ]
 
-  constructor(private loggingService: LoggingService){
+  constructor (
+    private loggingService: LoggingService,
+    private idService: IdService
+  ) {}
 
-  }
-
-  addAccount (name: string, status: string) {
-    this.accounts.push({ name: name, status: status })
+  addAccount (account: IAccount) {
+    this.accounts.push(account)
     this.loggingService.logStatusChange(status)
   }
 
