@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { AccountsService } from '../services/accounts.service'
 import { LoggingService } from '../services/logging.service'
+import { Status } from '../enums'
 
-import {IAccount} from '../interfaces'
+import { IAccount } from '../interfaces'
 
 @Component({
   selector: 'app-account',
@@ -19,6 +20,7 @@ export class AccountComponent implements OnInit {
   }
 
   @Input() account: IAccount
+  status = Status
 
   onSetTo (status: string): void {
     this.accountsService.updateStatus(this.account.id, status)
