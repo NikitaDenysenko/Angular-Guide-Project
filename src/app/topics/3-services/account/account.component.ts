@@ -13,7 +13,7 @@ import { IAccount } from '../interfaces'
 export class AccountComponent implements OnInit {
   constructor (
     private loggingService: LoggingService,
-    private accountsService: AccountsService
+    public accountsService: AccountsService
   ) {}
 
   ngOnInit (): void {
@@ -21,7 +21,6 @@ export class AccountComponent implements OnInit {
 
   @Input() account: IAccount
   status = Status
-
   onSetTo (status: string): void {
     this.accountsService.updateStatus(this.account.id, status)
     // this.loggingService.logStatusChange(status);

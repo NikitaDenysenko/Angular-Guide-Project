@@ -1,14 +1,16 @@
-<div>
-  <label>Account Name</label>
-  <input type="text" #accountName>
-</div>
-<div>
-  <select #statusInfo>
-    <option value='active'>{{status.active}}</option>
-    <option value="inactive">{{status.inactive}}</option>
-    <option value="unknown">{{status.unknown}}</option>
-  </select>
-</div>
-<button (click)="onCreateAccount(accountName.value, statusInfo.value)">
-  Add Account
-</button>
+<p-card>
+  <div>
+    <label>Account Name</label>
+    <input type="text" #accountName>
+  </div>
+  <div>
+    <select #statusInfo>
+      <option value='active'>{{status.active}}</option>
+      <option value="inactive">{{status.inactive}}</option>
+      <option value="unknown">{{status.unknown}}</option>
+    </select>
+  </div>
+  <button (click)="onCreateAccount(accountName.value, statusInfo.value)">
+    Add Account
+  </button>
+</p-card>
