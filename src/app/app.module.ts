@@ -22,7 +22,15 @@ import { NewAccountComponent } from './topics/3-services/new-account/new-account
 import { AccountComponent } from './topics/3-services/account/account.component'
 import { AccountsService } from './topics/3-services/services/accounts.service'
 import { LoggingService } from './topics/3-services/services/logging.service'
-import { IdService } from './topics/3-services/services/id.service'
+import { IdService } from './topics/3-services/services/id.service';
+import { HomeComponent } from './topics/4-routes/home/home.component';
+import { ServersComponent } from './topics/4-routes/servers/servers.component';
+import { UsersComponent } from './topics/4-routes/users/users.component';
+import { EditServerComponent } from './topics/4-routes/servers/edit-server/edit-server.component';
+import { ServerComponent } from './topics/4-routes/servers/server/server.component';
+import { UserComponent } from './topics/4-routes/users/user/user.component';
+import { MainRoutesComponent } from './topics/4-routes/main-routes/main-routes.component'
+import { ServersService } from './topics/4-routes/servers/servers.service'
 
 @NgModule({
   declarations: [
@@ -38,7 +46,14 @@ import { IdService } from './topics/3-services/services/id.service'
     HostlistenerDirective,
     MainServicesComponent,
     NewAccountComponent,
-    AccountComponent
+    AccountComponent,
+    HomeComponent,
+    ServersComponent,
+    UsersComponent,
+    EditServerComponent,
+    ServerComponent,
+    UserComponent,
+    MainRoutesComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +63,7 @@ import { IdService } from './topics/3-services/services/id.service'
     InputTextModule,
     CardModule
   ],
-  providers: [AccountsService,LoggingService,IdService],
+  providers: [AccountsService,LoggingService,IdService,ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
