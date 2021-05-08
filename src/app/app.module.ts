@@ -16,7 +16,10 @@ import {BasicHighlightDirective} from './topics/2-directives/directives/attribut
 import { BetterHighlightDirective } from './topics/2-directives/directives/attribute/better-highlight.directive';
 import { UnlessDirective } from './topics/2-directives/directives/structural/unless.directive';
 import { RendererDirective } from './topics/2-directives/directives/attribute/renderer.directive';
-import { HostlistenerDirective } from './topics/2-directives/directives/attribute/hostlistener.directive'
+import { HostlistenerDirective } from './topics/2-directives/directives/attribute/hostlistener.directive';
+import { MainServicesComponent } from './topics/3-services/main-services/main-services.component';
+import { NewAccountComponent } from './topics/3-services/new-account/new-account.component';
+import { AccountComponent } from './topics/3-services/account/account.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { HostlistenerDirective } from './topics/2-directives/directives/attribut
     BetterHighlightDirective,
     UnlessDirective,
     RendererDirective,
-    HostlistenerDirective
+    HostlistenerDirective,
+    MainServicesComponent,
+    NewAccountComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
