@@ -1,0 +1,6 @@
+Hierarchical Injector
+
+For injecting service into service - we need to proved it into app.module.ts
+
+@Injectable - tells Angular, that service is Injectable
+(add to service, where you want something to be injected)

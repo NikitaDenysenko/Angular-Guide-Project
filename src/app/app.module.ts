@@ -20,6 +20,8 @@ import { HostlistenerDirective } from './topics/2-directives/directives/attribut
 import { MainServicesComponent } from './topics/3-services/main-services/main-services.component';
 import { NewAccountComponent } from './topics/3-services/new-account/new-account.component';
 import { AccountComponent } from './topics/3-services/account/account.component'
+import { AccountsService } from './topics/3-services/services/accounts.service'
+import { LoggingService } from './topics/3-services/services/logging.service'
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import { AccountComponent } from './topics/3-services/account/account.component'
     InputTextModule,
     CardModule
   ],
-  providers: [],
+  providers: [AccountsService,LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
