@@ -1,0 +1,16 @@
+Routes
+
+RouterModule
+
+router-outlet
+
+routerLink
+
+routerLinkActive
+
+routerLinkActiveOptions
+
+Router.navigate() - doesn't know on which route you're currently on, but
+routerLink - always knows
+
+ActivatedRoute
