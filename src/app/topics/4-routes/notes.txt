@@ -6,6 +6,10 @@ router-outlet
 
 routerLink
 
+queryParams
+
+fragment
+
 routerLinkActive
 
 routerLinkActiveOptions
@@ -14,3 +18,7 @@ Router.navigate() - doesn't know on which route you're currently on, but
 routerLink - always knows
 
 ActivatedRoute
+
+relative vs absolute path
+
+this.route.snapshot.params['id'] (route = ActivatedRoute)
