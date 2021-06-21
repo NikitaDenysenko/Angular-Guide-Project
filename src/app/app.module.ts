@@ -31,24 +31,8 @@ import { ServerComponent } from './topics/4-routes/servers/server/server.compone
 import { UserComponent } from './topics/4-routes/users/user/user.component'
 import { MainRoutesComponent } from './topics/4-routes/main-routes/main-routes.component'
 import { ServersService } from './topics/4-routes/servers/servers.service'
-import { RouterModule, Routes } from '@angular/router'
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  {
-    path: 'users',
-    component: UsersComponent,
-    children: [{ path: ':id/:name', component: UserComponent }]
-  },
-  {
-    path: 'servers',
-    component: ServersComponent,
-    children: [
-      { path: ':id', component: ServerComponent },
-      { path: ':id/edit', component: EditServerComponent }
-    ]
-  }
-]
+import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './topics/4-routes/page-not-found/page-not-found.component'
 
 @NgModule({
   declarations: [
@@ -71,7 +55,8 @@ const appRoutes: Routes = [
     EditServerComponent,
     ServerComponent,
     UserComponent,
-    MainRoutesComponent
+    MainRoutesComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +65,6 @@ const appRoutes: Routes = [
     ButtonModule,
     InputTextModule,
     CardModule,
-    RouterModule.forRoot(appRoutes)
   ],
   providers: [AccountsService, LoggingService, IdService, ServersService],
   bootstrap: [AppComponent]
